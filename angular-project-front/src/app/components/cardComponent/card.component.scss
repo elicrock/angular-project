@@ -1,0 +1,61 @@
+.card {
+  border: 2px solid #000;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  cursor: pointer;
+  transition: opacity 0.2s, background 0.2s;
+  &:hover {
+    opacity: 0.7;
+    // background-color: rgb(155, 209, 241);
+  }
+  &:hover .card__title {
+    background: rgb(206, 237, 255);
+  }
+  &__title {
+    padding: 5px;
+    margin: 0;
+    font-size: 16px;
+    color: #000;
+    overflow: hidden;
+    border-bottom: 2px solid #000;
+    border-radius: 10px 10px 0 0;
+    transition: background 0.2s;
+    &_orange-color {
+      color: orange;
+    }
+  }
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 5px;
+  }
+  &__subtitle {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    &::after {
+      content: "";
+      width: 12px;
+      height: 12px;
+      margin-left: 10px;
+      background-image: url("../../../assets/images/downloads-icon.png");
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+  }
+  &__text {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    color: #808080;
+  }
+}
+
+.highlight {
+  background: rgb(255, 252, 212);
+}

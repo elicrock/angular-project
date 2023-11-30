@@ -1,0 +1,12 @@
+<li class="card" (mouseenter)="onCardMouseOver()">
+  <h2 class="card__title" [ngClass]="{ highlight: isHovered }">
+    <span class="card__title_orange-color">{{
+      package.id.split("/")[0] + (package.id.includes("/") ? "/" : "")
+    }}</span>
+    <span class="card__title_black-color">{{ package.id.split("/")[1] }}</span>
+  </h2>
+  <div class="card__body">
+    <h3 class="card__subtitle">{{ formatWeeklyDownloads(package) }}</h3>
+    <p class="card__text">{{ package.dependencyCount }} dependencies</p>
+  </div>
+</li>

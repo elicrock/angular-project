@@ -1,0 +1,27 @@
+<main class="main">
+  <header class="header">
+    <a href="/" class="header__logo" aria-hidden="true"></a>
+    <h2>{{ title }}</h2>
+  </header>
+  <section class="content">
+    <app-search
+      (searchSubmit)="onSearch($event)"
+      (resetSearch)="onResetSearch()"
+    ></app-search>
+  </section>
+  <section class="cards">
+    <ul class="cards__list">
+      <ng-container *ngIf="filteredPackages.length; else noPackages">
+        <app-card
+          *ngFor="let package of filteredPackages"
+          [package]="package"
+          (mouseEnterPackage)="onPackageDependencies($event)"
+          [isHovered]="package.isHovered"
+        ></app-card>
+      </ng-container>
+      <ng-template #noPackages>
+        <p>No packages found.</p>
+      </ng-template>
+    </ul>
+  </section>
+</main>
